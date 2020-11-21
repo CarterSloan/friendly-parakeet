@@ -1,13 +1,24 @@
 // Assignment code here
 //function to set password length
-var setPasswordLength = function() {
-  var length = "";
 
-  while (length < 8 || length > 128 || length === null) {
-    length = prompt("How long should your password be? Min. 8 characters, max 128 characters.");
-  }
-  console.log("Your password length is " + length + " characters.");
-};
+function passwordLength() {
+  var length = (window.prompt("How long should your password be? Min. 8 characters, max 128 characters."));
+    if (length < 8 || length > 128 || length === null) {
+      window.alert("You need to provide a valid answer. Please try again.");
+      passwordLength();
+    }
+  };
+
+passwordLength();
+
+var lowercaseConfirm = window.confirm("Would you like to include lowercase letters?");
+
+var uppercaseConfirm = window.confirm("Would you like to include uppercase letters?");
+
+var numberConfirm = window.confirm("Would you like to include numbers?")
+
+var specialCharacterConfirm = window.confirm("Would you like to include special characters?")
+       
 
 
 // Get references to the #generate element
@@ -25,4 +36,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-setPasswordLength();
+passwordParameters();
